@@ -138,11 +138,12 @@ export const initiateShopifyAuth = async (req, res) => {
             return res.status(404).json({ error: "User not found with this email" });
         }
 
-        // Encode success URL and state into a single string for Shopify OAuth
+        // Encode success URL, email, and state into a single string for Shopify OAuth
         const successUrl = req.body.success_url || REDIRECT_URLS.SUCCESS;
         const statePayload = Buffer.from(JSON.stringify({
             nonce: state,
-            successUrl: successUrl
+            successUrl: successUrl,
+            email: email
         })).toString('base64');
 
         console.log("Encoded state payload:", statePayload);
@@ -198,16 +199,43 @@ export const handleShopifyCallback = async (req, res) => {
         const shopHandleFromUrl = shop.replace(".myshopify.com", "").toLowerCase();
         console.log(`🔍 Extracting shop handle: ${shopHandleFromUrl} from ${shop}`);
 
+        // Decode state to get email fallback
+        let emailFromState = null;
+        try {
+            if (state) {
+                const decodedState = JSON.parse(Buffer.from(state, 'base64').toString());
+                if (decodedState.email) {
+                    emailFromState = decodedState.email;
+                }
+            }
+        } catch (e) {
+            console.error("⚠️ Error decoding state in callback:", e.message);
+        }
+
         // Find user linked to this shop
         let user = await userService.findUserByShopName(shopHandleFromUrl);
 
-        // Fallback: If not found by shopName, try finding by shopify.shopDomain
+        // Fallback 1: If not found by shopName, try finding by shopify.shopDomain
         if (!user) {
             console.log(`⚠️ User not found by shopName, trying shopify.shopDomain...`);
             const User = (await import("../models/User.js")).default;
             user = await User.findOne({
                 "shopify.shopDomain": { $regex: new RegExp(shopHandleFromUrl, "i") }
             });
+        }
+
+        // Fallback 2: If still not found, search by email from state (auto-detected store flow)
+        if (!user && emailFromState) {
+            console.log(`⚠️ User not found by shop domain, looking up by email from state: ${emailFromState}`);
+            user = await userService.findUserByEmail(emailFromState);
+            if (user) {
+                // Update user with the auto-detected shop details on the fly
+                user.shopName = shopHandleFromUrl;
+                if (!user.shopify) user.shopify = {};
+                user.shopify.shopDomain = shop;
+                await user.save();
+                console.log(`✅ Linked auto-detected shop ${shop} to user ${emailFromState}`);
+            }
         }
 
         if (!user) {
