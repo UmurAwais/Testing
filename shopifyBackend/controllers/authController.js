@@ -227,7 +227,8 @@ export const handleShopifyCallback = async (req, res) => {
         // Fallback 2: If still not found, search by email from state (auto-detected store flow)
         if (!user && emailFromState) {
             console.log(`⚠️ User not found by shop domain, looking up by email from state: ${emailFromState}`);
-            user = await userService.findUserByEmail(emailFromState);
+            const User = (await import("../models/User.js")).default;
+            user = await User.findOne({ email: { $regex: new RegExp(`^${emailFromState}$`, "i") } });
             if (user) {
                 // Update user with the auto-detected shop details on the fly
                 user.shopName = shopHandleFromUrl;
