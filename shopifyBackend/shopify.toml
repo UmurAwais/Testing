@@ -1,0 +1,44 @@
+# Shopify App Configuration
+# This file is used by Shopify CLI to configure your app and register webhooks
+
+[application]
+# Your app's client ID from Partner Dashboard
+client_id = "649e9ef47f5f58d246f9ffc16974aa6e"
+# Application URL (where your app is hosted)
+application_url = "https://ecomlly.vercel.app"
+# Redirect URL after OAuth
+embedded = false
+
+[auth]
+# Redirect URL for OAuth callback
+redirect_urls = [
+  "https://ecomlly.vercel.app/auth/callback"
+]
+
+[webhooks]
+# Mandatory GDPR Compliance Webhooks
+# These are required by Shopify for all apps and must be registered
+
+# Customer data request webhook (GDPR compliance)
+[[webhooks.subscriptions]]
+topic = "customers/data_request"
+uri = "https://ecomlly.vercel.app/webhooks/customers/data_request"
+format = "json"
+api_version = "2025-01"
+
+# Customer redact webhook (GDPR compliance)
+[[webhooks.subscriptions]]
+topic = "customers/redact"
+uri = "https://ecomlly.vercel.app/webhooks/customers/redact"
+format = "json"
+api_version = "2025-01"
+
+# Shop redact webhook (GDPR compliance)
+[[webhooks.subscriptions]]
+topic = "shop/redact"
+uri = "https://ecomlly.vercel.app/webhooks/shop/redact"
+format = "json"
+api_version = "2025-01"
+
+[pos]
+embedded = false

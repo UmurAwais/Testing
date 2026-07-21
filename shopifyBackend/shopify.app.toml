@@ -1,0 +1,39 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "649e9ef47f5f58d246f9ffc16974aa6e"
+name = "eComlly: AI Store Builder"
+application_url = "https://aistorebuilder.ecomlly.com"
+embedded = false
+
+[webhooks]
+api_version = "2025-01"
+
+# Mandatory GDPR Compliance Webhooks
+# These are required by Shopify for all apps and must be registered
+
+# Customer data request webhook
+[[webhooks.subscriptions]]
+compliance_topics = ["customers/data_request"]
+uri = "https://ecomlly.vercel.app/webhooks/customers/data_request"
+format = "json"
+
+# Customer redact webhook
+[[webhooks.subscriptions]]
+compliance_topics = ["customers/redact"]
+uri = "https://ecomlly.vercel.app/webhooks/customers/redact"
+format = "json"
+
+# Shop redact webhook
+[[webhooks.subscriptions]]
+compliance_topics = ["shop/redact"]
+uri = "https://ecomlly.vercel.app/webhooks/shop/redact"
+format = "json"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_files,write_files,read_products,write_products,read_publications,write_publications,read_content,write_content,write_theme_code,read_themes,write_themes"
+optional_scopes = [ ]
+use_legacy_install_flow = false
+
+[auth]
+redirect_urls = [ "https://ecomlly.vercel.app/auth/callback" ]
