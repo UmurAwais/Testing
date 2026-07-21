@@ -7,7 +7,7 @@ const PARTNER_CLIENT_ID = process.env.PARTNER_CLIENT_ID;
 const PARTNER_CLIENT_SECRET = process.env.PARTNER_CLIENT_SECRET;
 const PARTNER_API_ACCESS_TOKEN = process.env.PARTNER_API_ACCESS_TOKEN;
 const PARTNER_ORG_ID = process.env.PARTNER_ORG_ID;
-const APP_URL = process.env.HOST || 'https://ecomlly.vercel.app';
+const APP_URL = process.env.HOST || 'https://ecomlly-nu.vercel.app';
 
 // Webhook configurations
 const WEBHOOKS = [

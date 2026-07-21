@@ -46,7 +46,7 @@ export default function ProfilePage({ userData, updateUserData, onLogout }: Prop
 
                 console.log("📥 Fetching user data for:", email);
 
-                const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly.vercel.app";
+                const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
                 const response = await fetch(`${apiUrl}/api/user/${encodeURIComponent(email)}`);
 
                 if (!response.ok) {

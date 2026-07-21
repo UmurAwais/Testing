@@ -101,7 +101,8 @@ export default function ConnectShopify({ userData, updateUserData }: Props) {
 
     setIsConnecting(true);
     try {
-      const response = await fetch('https://ecomlly.vercel.app/auth', {
+      const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
+      const response = await fetch(`${apiUrl}/auth`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -113,7 +113,7 @@ export const createBannerMetafield = async (shop, accessToken, bannerImage, inde
  */
 export const registerComplianceWebhooks = async (shop, accessToken) => {
     const endpoint = `https://${shop}/admin/api/${SHOPIFY_CONFIG.API_VERSION}/graphql.json`;
-    const APP_URL = process.env.HOST || 'https://ecomlly.vercel.app';
+    const APP_URL = process.env.HOST || 'https://ecomlly-nu.vercel.app';
     
     const webhooks = [
         {

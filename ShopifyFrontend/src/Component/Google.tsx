@@ -15,7 +15,7 @@ export default function Google({ onSuccess, onError, isLogin = false }: GoogleLo
   const googleLoginRef = useRef<HTMLDivElement>(null);
 
   // Get API URL from environment variable, fallback to production URL
-  const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly.vercel.app";
+  const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
 
   const handleSuccess = async (credentialResponse: any) => {
     if (credentialResponse.credential) {

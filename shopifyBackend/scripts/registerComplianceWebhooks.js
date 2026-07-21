@@ -5,7 +5,7 @@ dotenv.config();
 
 const PARTNER_CLIENT_ID = process.env.PARTNER_CLIENT_ID;
 const PARTNER_CLIENT_SECRET = process.env.PARTNER_CLIENT_SECRET;
-const APP_URL = process.env.HOST || 'https://ecomlly.vercel.app';
+const APP_URL = process.env.HOST || 'https://ecomlly-nu.vercel.app';
 
 /**
  * Register compliance webhooks using GraphQL Admin API

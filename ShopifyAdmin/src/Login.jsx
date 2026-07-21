@@ -16,7 +16,8 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://ecomlly.vercel.app/api/admin/login", {
+      const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
+      const res = await fetch(`${apiUrl}/api/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

@@ -72,7 +72,8 @@ export default function AddProductsPage() {
             console.log("   Email:", email);
             console.log("   Shop:", shop);
 
-            const response = await fetch("https://ecomlly.vercel.app/api/products/add-top-selling", {
+            const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
+            const response = await fetch(`${apiUrl}/api/products/add-top-selling`, {
                 // const response = await fetch("http://localhost:3000/api/products/add-top-selling", {
                 method: "POST",
                 headers: {

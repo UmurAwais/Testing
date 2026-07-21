@@ -4,7 +4,7 @@ dotenv.config();
 
 export const SHOPIFY_CONFIG = {
     SCOPES: "write_products,read_products,write_themes,read_themes,write_files,read_files,write_publications,read_publications",
-    REDIRECT_URI: `${process.env.HOST || 'https://ecomlly.vercel.app'}/auth/callback`,
+    REDIRECT_URI: `${process.env.HOST || 'https://ecomlly-nu.vercel.app'}/auth/callback`,
     API_VERSION: "2025-01",
     CLIENT_ID: process.env.PARTNER_CLIENT_ID,
     CLIENT_SECRET: process.env.PARTNER_CLIENT_SECRET,

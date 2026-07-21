@@ -29,7 +29,8 @@ export default function ChooseBanner({ userData, updateUserData }: Props) {
         // console.log(`https://ecomlly.vercel.app/api/niches/GetNiche/${niche.toLowerCase()}`)
         setLoading(true);
         setError(null);
-        const response = await fetch(`https://ecomlly.vercel.app/api/niches/GetNiche/${niche}`);
+        const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
+        const response = await fetch(`${apiUrl}/api/niches/GetNiche/${niche}`);
         if (!response.ok) {
           throw new Error('Failed to fetch banners');
         }

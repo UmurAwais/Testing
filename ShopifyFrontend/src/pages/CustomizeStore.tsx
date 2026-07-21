@@ -21,7 +21,8 @@ export default function CustomizeStore() {
         setLoading(true); // Start loading
 
         try {
-            const response = await fetch('https://ecomlly.vercel.app/api/theme', {
+            const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
+            const response = await fetch(`${apiUrl}/api/theme`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

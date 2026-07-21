@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Plus, Edit, Save, X, Image, Package, Tag, Trash2, ChevronLeft, ChevronRight, ArrowLeft } from "lucide-react";
 
-const API_URL = "https://ecomlly.vercel.app/api/niches";
+const API_URL = (import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app") + "/api/niches";
 // const API_URL = "http://localhost:3000/api/niches";
 
 // Product Image Carousel Component

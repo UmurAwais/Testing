@@ -12,7 +12,7 @@ export default function LoginSignup({ userData, updateUserData }) {
   const navigate = useNavigate();
 
   // Get API URL from environment variable, fallback to production URL
-  const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly.vercel.app";
+  const apiUrl = import.meta.env.VITE_API_URL || "https://ecomlly-nu.vercel.app";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -14,19 +14,19 @@ api_version = "2025-01"
 # Customer data request webhook
 [[webhooks.subscriptions]]
 compliance_topics = ["customers/data_request"]
-uri = "https://ecomlly.vercel.app/webhooks/customers/data_request"
+uri = "https://ecomlly-nu.vercel.app/webhooks/customers/data_request"
 format = "json"
 
 # Customer redact webhook
 [[webhooks.subscriptions]]
 compliance_topics = ["customers/redact"]
-uri = "https://ecomlly.vercel.app/webhooks/customers/redact"
+uri = "https://ecomlly-nu.vercel.app/webhooks/customers/redact"
 format = "json"
 
 # Shop redact webhook
 [[webhooks.subscriptions]]
 compliance_topics = ["shop/redact"]
-uri = "https://ecomlly.vercel.app/webhooks/shop/redact"
+uri = "https://ecomlly-nu.vercel.app/webhooks/shop/redact"
 format = "json"
 
 [access_scopes]
@@ -36,4 +36,4 @@ optional_scopes = [ ]
 use_legacy_install_flow = false
 
 [auth]
-redirect_urls = [ "https://ecomlly.vercel.app/auth/callback" ]
+redirect_urls = [ "https://ecomlly-nu.vercel.app/auth/callback" ]
