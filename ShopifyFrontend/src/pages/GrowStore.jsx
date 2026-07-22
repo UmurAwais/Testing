@@ -155,6 +155,10 @@ const GrowStore = ({ userData, updateUserData }) => {
           >
             {success ? "Setup Complete! Let's Sell! 💰" : "Start Selling Now! 💸"}
           </button>
+
+          <p className="text-[12px] text-ecomlly-muted mt-4 text-center leading-relaxed font-semibold">
+            Your store is live, but it's still password protected. Go to <span className="text-ecomlly-text font-bold">Shopify Admin → Online Store → Preferences</span>, turn off Password protection, and save your changes.
+          </p>
         </div>
       </div>
 
