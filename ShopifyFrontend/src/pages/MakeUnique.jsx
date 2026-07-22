@@ -19,7 +19,7 @@ const MakeUnique = ({ userData, updateUserData }) => {
     'Duplicating Dawn theme framework...',
     'Customizing layout configuration...',
     'Injecting niche-specific assets...',
-    'Publishing theme live...'
+    'Getting Things Ready...'
   ]
 
   useEffect(() => {
