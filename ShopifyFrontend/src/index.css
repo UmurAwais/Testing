@@ -1,23 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-ecomlly-bg: #FAFDF8;
+  --color-ecomlly-bg-2: #F3F9F1;
+  --color-ecomlly-surface: #FFFFFF;
+  --color-ecomlly-surface-2: #EDF7EC;
+  --color-ecomlly-line: rgba(31, 107, 66, 0.14);
+  --color-ecomlly-line-s: rgba(31, 107, 66, 0.30);
+  --color-ecomlly-violet: #2F9E64;
+  --color-ecomlly-v-deep: #1B6B42;
+  --color-ecomlly-v-soft: #1F8A52;
+  --color-ecomlly-lav: #1B6B42;
+  --color-ecomlly-text: #16241C;
+  --color-ecomlly-muted: #5C6B62;
+  --color-ecomlly-gold: #C7962F;
+  --font-sans: 'Poppins', sans-serif;
+}
 
-@layer utilities {
-  @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to right, #FAFDF8 50%, #F3F9F1 50%);
+  color: #16241C;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  body {
+    background: #FAFDF8;
   }
+}
 
-  .animate-marquee {
-    animation: marquee 25s linear infinite;
-  }
+/* ── Success Animation ── */
+@keyframes pop-in {
+  0% { transform: scale(0.4); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
 
-  .bg-grid-pattern {
-    background-size: 44px 44px;
-    background-image: 
-      linear-gradient(to right, rgba(139, 92, 246, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(139, 92, 246, 0.08) 1px, transparent 1px);
+@keyframes draw-check {
+  0% { stroke-dashoffset: 48; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes confetti-explode {
+  0% {
+    transform: translate(0, 0) scale(0.3);
+    opacity: 1;
   }
+  100% {
+    transform: translate(var(--c-x), var(--c-y)) scale(var(--c-scale, 1));
+    opacity: 0;
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-draw-check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: draw-check 0.4s ease-out 0.4s forwards;
+}
+
+.animate-confetti {
+  animation: confetti-explode 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) 0.3s forwards;
+}
+
+/* ── Lock Wiggle Animation ── */
+@keyframes lock-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-12deg); }
+  40% { transform: rotate(10deg); }
+  60% { transform: rotate(-8deg); }
+  80% { transform: rotate(6deg); }
+}
+
+.group:hover .lock-icon-wiggle {
+  animation: lock-wiggle 0.5s ease-in-out;
 }
