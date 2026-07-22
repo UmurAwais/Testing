@@ -21,10 +21,10 @@ const GrabDiscount = ({ userData, updateUserData }) => {
 
         {/* Step 4 Card: Grab Discount */}
         <div className="relative w-full bg-white border border-ecomlly-line rounded-[24px] p-5 min-[481px]:p-6 min-[901px]:p-8 shadow-sm mb-5">
-          
+
           {/* Header */}
           <div className="flex items-center gap-3.5 mb-6">
-            <div className="w-8 h-8 rounded-full bg-linear-to-b from-[#34B073] to-ecomlly-v-deep text-white flex items-center justify-center font-sans font-extrabold text-[14px] flex-none shadow-[0_2px_8px_rgba(52,176,115,0.2)]">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#35B577] to-[#248B57] text-white flex items-center justify-center font-sans font-extrabold text-[14px] flex-none">
               4
             </div>
             <h2 className="font-sans font-extrabold text-[20px] min-[481px]:text-[24px] tracking-wide text-ecomlly-text">
@@ -62,15 +62,15 @@ const GrabDiscount = ({ userData, updateUserData }) => {
 
           {/* Action Link & Buttons */}
           <div className="flex flex-col gap-3">
-            <a 
-              href="https://admin.shopify.com/settings/plan" 
-              target="_blank" 
+            <a
+              href="https://admin.shopify.com/settings/subscribe/checkout?plan=basic&bp=MONTHLY"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-full block no-underline"
             >
               <button
                 type="button"
-                className="w-full bg-linear-to-b from-[#34B073] to-ecomlly-v-deep hover:from-[#2e9e68] hover:to-[#175b37] text-white py-3.5 min-[481px]:py-4 px-6 rounded-xl font-sans font-bold text-[16px] min-[481px]:text-[18px] tracking-wide shadow-[0_8px_24px_rgba(27,107,66,0.25)] border-none cursor-pointer transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-br from-[#35B577] to-[#248B57] text-white py-3.5 min-[481px]:py-4 px-6 rounded-xl font-sans font-bold text-[16px] min-[481px]:text-[18px] tracking-wide border-none cursor-pointer transition-all duration-200 hover:brightness-105 flex items-center justify-center gap-2"
               >
                 Get $1/month Plan
               </button>

@@ -52,7 +52,7 @@ const ClaimStore = ({ userData, updateUserData }) => {
 
           {/* Header */}
           <div className="flex items-center gap-3.5 mb-5">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-b from-[#34B073] to-ecomlly-v-deep text-white flex items-center justify-center font-sans font-extrabold text-[14px] flex-none shadow-[0_2px_8px_rgba(52,176,115,0.2)]">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#35B577] to-[#248B57] text-white flex items-center justify-center font-sans font-extrabold text-[14px] flex-none">
               3
             </div>
             <h2 className="font-sans font-extrabold text-[20px] min-[481px]:text-[24px] tracking-wide text-ecomlly-text">
@@ -173,7 +173,7 @@ const ClaimStore = ({ userData, updateUserData }) => {
             <button
               type="button"
               disabled={saving}
-              className="w-full bg-gradient-to-b from-[#34B073] to-ecomlly-v-deep hover:from-[#2e9e68] hover:to-[#175b37] text-white py-3 min-[481px]:py-3.75 px-6 rounded-xl font-sans font-bold text-[16px] min-[481px]:text-[18px] tracking-wide shadow-[0_8px_24px_rgba(27,107,66,0.25)] flex items-center justify-center gap-2 border-none cursor-pointer transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-br from-[#35B577] to-[#248B57] text-white py-3 min-[481px]:py-3.75 px-6 rounded-xl font-sans font-bold text-[16px] min-[481px]:text-[18px] tracking-wide flex items-center justify-center gap-2 border-none cursor-pointer transition-all duration-200 hover:brightness-105 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {saving ? 'Opening Shopify...' : 'Claim my Store'}
             </button>

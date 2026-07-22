@@ -126,7 +126,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full relative group overflow-hidden bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3.5 rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70"
+              className="w-full relative group overflow-hidden bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3.5 rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 {loading ? (

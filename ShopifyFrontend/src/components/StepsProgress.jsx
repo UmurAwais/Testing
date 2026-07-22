@@ -99,7 +99,7 @@ const StepsProgress = ({ activeStep = 1 }) => {
         {/* Progress bar container */}
         <div className="w-full h-1.5 bg-ecomlly-line rounded-full overflow-hidden">
           <div 
-            className="h-full bg-linear-to-r from-[#34B073] to-ecomlly-v-soft rounded-full transition-all duration-500 ease-out" 
+            className="h-full bg-linear-to-r from-[#35B577] to-ecomlly-v-soft rounded-full transition-all duration-500 ease-out" 
             style={{ width: `${(activeStep / 9) * 100}%` }}
           />
         </div>

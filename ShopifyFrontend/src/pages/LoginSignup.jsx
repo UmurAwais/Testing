@@ -154,12 +154,11 @@ const LoginSignup = ({ userData, updateUserData }) => {
                 <p className="text-red-600 text-sm text-center mb-4 font-semibold">{error}</p>
               )}
 
-              {/* Submit */}
               <button 
                 type="submit" 
                 disabled={loading}
-                className={`w-full flex items-center justify-center gap-2 bg-gradient-to-b from-[#34B073] to-ecomlly-v-deep text-white font-sans font-bold text-18px py-3.75 px-6 rounded-xl border-none shadow-[0_10px_30px_-8px_rgba(27,107,66,0.35),inset_0_1px_0_rgba(255,255,255,0.22)] transition-all duration-[180ms] active:translate-y-0 mt-2 mb-4 tracking-[0.01em] ${
-                  loading ? 'opacity-75 cursor-not-allowed' : 'cursor-pointer hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-10px_rgba(27,107,66,0.45),inset_0_1px_0_rgba(255,255,255,0.25)]'
+                className={`w-full flex items-center justify-center gap-2 bg-gradient-to-br from-[#35B577] to-[#248B57] text-white font-sans font-bold text-18px py-3.75 px-6 rounded-xl border-none mt-2 mb-4 tracking-[0.01em] transition-all duration-200 ${
+                  loading ? 'opacity-75 cursor-not-allowed' : 'cursor-pointer hover:brightness-105'
                 }`}
               >
                 {loading ? (isLogin ? 'Logging in...' : 'Signing up...') : (isLogin ? 'Log in' : 'Sign up')}
