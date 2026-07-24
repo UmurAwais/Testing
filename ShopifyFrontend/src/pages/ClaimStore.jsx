@@ -64,68 +64,16 @@ const ClaimStore = ({ userData, updateUserData }) => {
             We’ve built your store — now just click "Claim store" on the next screen and it’s yours. We’ll bring you straight back to launch.
           </p>
 
-          {/* ══ MOCK SHOPIFY BROWSER PREVIEW NATIVE CARD ══ */}
-          <div className="w-full rounded-2xl overflow-hidden border border-[#D5EAD5]/40 bg-[#FAFDF8] shadow-inner mb-8 flex flex-col aspect-[16/11] max-w-[650px] mx-auto">
-            {/* Header top bar */}
-            <div className="bg-[#133A24] h-11 px-4 flex items-end gap-1.5">
-              {/* BuildYour tab */}
-              <div className="bg-[#18482E] text-white text-[12px] font-semibold px-3.5 py-2.25 rounded-t-xl flex items-center gap-1.5 pointer-events-none select-none opacity-90">
-                <span className="text-[12px]">🛍</span>
-                <span>BuildYour...</span>
-              </div>
-              {/* Shopify.com active tab */}
-              <div className="bg-[#FAFDF8] text-[#133A24] text-[12px] font-bold px-4 py-2.25 rounded-t-xl flex items-center gap-1.5 -mb-px z-10 pointer-events-none select-none shadow-[0_-2px_6px_rgba(0,0,0,0.06)]">
-                <span className="text-[12px] text-[#5E8E3E]">🟢</span>
-                <span>shopify.com</span>
-              </div>
-            </div>
-
-            {/* Browser client content */}
-            <div className="bg-[#FAFDF8] p-6 min-[480px]:p-10 flex flex-col items-center justify-center border-t border-gray-100 flex-1 relative select-none">
-
-              {/* Shopify Logo */}
-              <div className="flex items-center justify-center gap-1.5 mb-2.5">
-                <span className="text-3xl">🛍</span>
-                <span className="font-sans font-extrabold text-[24px] tracking-tight text-[#1a4d2e]">shopify</span>
-              </div>
-
-              <div className="text-[14px] font-semibold text-gray-500 mb-6 text-center">
-                Where would you like to sell?
-              </div>
-
-              {/* Checkbox item skeletons */}
-              <div className="w-full max-w-[420px] flex flex-col gap-2.5 mb-10">
-                <div className="h-9 bg-[#F0F7ED]/70 rounded-xl w-full flex items-center justify-between px-4 border border-[rgba(31,107,66,0.05)]">
-                  <div className="h-2 w-1/3 bg-gray-200/80 rounded-md" />
-                  <div className="w-3.5 h-3.5 border border-gray-300 rounded" />
-                </div>
-                <div className="h-9 bg-[#F0F7ED]/70 rounded-xl w-full flex items-center justify-between px-4 border border-[rgba(31,107,66,0.05)]">
-                  <div className="h-2 w-1/2 bg-gray-200/80 rounded-md" />
-                  <div className="w-3.5 h-3.5 border border-gray-300 rounded" />
-                </div>
-              </div>
-
-              {/* Skip button with cursor */}
-              <div className="absolute bottom-6 left-6 min-[480px]:bottom-8 min-[480px]:left-8">
-                <div className="relative">
-                  <button
-                    type="button"
-                    className="bg-[#112415] text-[#86DDAB] px-5 py-2.25 rounded-full font-bold text-[13px] tracking-wide pointer-events-none flex items-center justify-center"
-                  >
-                    Skip
-                  </button>
-                  {/* Cursor Arrow */}
-                  <svg
-                    className="absolute bottom-[-16px] right-[-14px] w-6 h-6 text-[#4CC183] drop-shadow-md select-none transform rotate-[15deg] pointer-events-none"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M4.5 3v15.2l3.8-3.8 2.5 5.8 2.6-1.1-2.5-5.8 4.6.1L4.5 3z" />
-                  </svg>
-                </div>
-              </div>
-
-            </div>
+          {/* Instruction Video */}
+          <div className="w-full mb-8 bg-black rounded-2xl overflow-hidden aspect-video border border-ecomlly-line-s/60 shadow-sm relative max-w-[650px] mx-auto">
+            <video 
+              className="w-full h-full object-cover"
+              src="/ecomlly.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </div>
 
           {/* What happens next timeline */}
