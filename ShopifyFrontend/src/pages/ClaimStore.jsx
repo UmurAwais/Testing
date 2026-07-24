@@ -65,7 +65,7 @@ const ClaimStore = ({ userData, updateUserData }) => {
           </p>
 
           {/* Instruction Video */}
-          <div className="w-full mb-8 bg-black rounded-2xl overflow-hidden aspect-video border border-ecomlly-line-s/60 shadow-sm relative max-w-[650px] mx-auto">
+          <div className="w-full mb-8 bg-black rounded-2xl overflow-hidden aspect-[2/1] border border-ecomlly-line-s/60 shadow-sm relative max-w-[650px] mx-auto">
             <video 
               className="w-full h-full object-cover"
               src="/ecomlly.mp4"
